@@ -27,7 +27,7 @@ node class.js
 
 
 ### import es6のモジュールの読み込み方法
-- import   
+- import
   - modules.js exportを使って外部に関数を外だし
   - lib/personClass.js exportを使ってクラスを外部に外だし
   - import.js 外部の関数やクラスをこの方法で読み込むことができる
@@ -39,6 +39,13 @@ node class.js
 ```
 ### node nodeでの読み込み方法
 - require
+  - modules.js modules.exportを使って外部に関数を外だし
+  - lib/personClass.js module.exportsを使ってクラスを外部に外だし
+  - require.js 外部の関数やクラスをこの方法で読み込むことができる
 
+```
+nodeコマンドで実行
+node require.js
+```
 
 ### webpack バンドル
