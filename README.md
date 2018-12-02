@@ -48,4 +48,92 @@ nodeコマンドで実行
 node require.js
 ```
 
-### webpack バンドル
+## webpack バンドル(モジュールバンドル)
+https://qiita.com/soarflat/items/28bf799f7e0335b68186
+
+複数のプログラムを1つにまとめてファイルを出力するツールのこと。
+バンドルとは束ねる、と言う意味。
+webpack以外にはBrowserifyなどが有名。
+
+### package.jsonとは?
+npmでのライブラリ情報の管理や実行スクリプトの管理など。
+
+
+###ファイル構成
+
+- webpack_sample
+  - package.json ライブラリ&スクリプト管理
+  - src 生成元のディレクトリ
+    - original.js
+  - dist 生成後の成果物のディレクトリ
+    - app.js
+  - index.html
+
+#### ライブラリ管理
+package.jsonの作成
+```
+npm init -y
+```
+
+package.json
+```
+{
+  "name": "library",
+  "version": "1.0.0",
+  "description": "",
+  "main": "makeFormFromJS.js",
+  "scripts": {
+    "gulp": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://umanari145@github.com/umanari145/library.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umanari145/library/issues"
+  },
+  "homepage": "https://github.com/umanari145/library#readme",
+  "devDependencies": {
+    "webpack": "^4.16.2",
+    "webpack-cli": "^2.1.5"
+  },
+  "dependencies": {
+    "moment": "^2.22.2",
+    "select2": "^4.0.6-rc.1"
+  }
+}
+
+```
+#### ライブラリ管理
+下記の部分でライブラリの管理をしている
+```npm install(i)```package.jsonに書かれているライブラリがインストールされる
+```npm install (ライブラリ名)```で個別ライブラリが```./node_modules```以下にインストールされる
+--save-dev(--D) オプションをつけるとdevDependenciesに記録される(開発時に実行される)
+
+```
+"devDependencies": {
+  "webpack": "^4.16.2",
+  "webpack-cli": "^2.1.5"
+},
+"dependencies": {
+  "jquery-ui-sass": "0.0.1",
+}
+```
+##### コマンド実行
+```npx webpack --version```でnode_modules以下のライブラリを実行できる
+
+
+
+##### スクリプト実行
+以下の部分に記述することで
+```npm run``` 〜が実行可能 ex ```npm run test```
+
+```
+  "scripts": {
+    "gulp": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+```
