@@ -49,7 +49,8 @@ node require.js
 ```
 
 ## webpack バンドル(モジュールバンドル)
-https://qiita.com/soarflat/items/28bf799f7e0335b68186
+[webpack4入門](https://qiita.com/soarflat/items/28bf799f7e0335b68186)<br>
+[npmとwebpack4でビルド - jQueryからの次のステップ](https://qiita.com/civic/items/82c0184bcadc50965f91)
 
 複数のプログラムを1つにまとめてファイルを出力するツールのこと。
 バンドルとは束ねる、と言う意味。
@@ -59,17 +60,16 @@ webpack以外にはBrowserifyなどが有名。
 npmでのライブラリ情報の管理や実行スクリプトの管理など。
 
 
-###ファイル構成
+### ファイル構成
 
 - webpack_sample
   - package.json ライブラリ&スクリプト管理
   - src 生成元のディレクトリ
-    - original.js
-  - dist 生成後の成果物のディレクトリ
-    - app.js
+    - main.js ライブラリのインポートのjs
+  - app.js 生成後のjs
   - index.html
 
-#### ライブラリ管理
+### ライブラリ管理
 package.jsonの作成
 ```
 npm init -y
@@ -107,9 +107,9 @@ package.json
 }
 
 ```
-#### ライブラリ管理
+
 下記の部分でライブラリの管理をしている
-```npm install(i)```package.jsonに書かれているライブラリがインストールされる
+```npm install(i)```でpackage.jsonに書かれているライブラリがインストールされる
 ```npm install (ライブラリ名)```で個別ライブラリが```./node_modules```以下にインストールされる
 --save-dev(--D) オプションをつけるとdevDependenciesに記録される(開発時に実行される)
 
@@ -122,10 +122,8 @@ package.json
   "jquery-ui-sass": "0.0.1",
 }
 ```
-##### コマンド実行
-```npx webpack --version```でnode_modules以下のライブラリを実行できる
-
-
+#### コマンド実行
+```npx (ライブラリ名)```でnode_modules以下のライブラリを実行できる。ex ```npx webpack --version ```
 
 ##### スクリプト実行
 以下の部分に記述することで
@@ -136,4 +134,9 @@ package.json
     "gulp": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+```
+
+### JSコンパイル
+``
+npx webpack   --mode development  --config ./webpack.config.js
 ```
