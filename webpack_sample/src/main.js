@@ -1,5 +1,5 @@
 const $ = require('jquery')
 
-$('.sample_btn').click(function(){
-   window.alert('本日は晴天なり')
+$('.sample_btn').on('click', ()=> {
+  window.alert("本日は晴天なり")
 })

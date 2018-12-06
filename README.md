@@ -149,3 +149,26 @@ npx webpack   --mode development (省略可能 --config ./webpack.config.js)
 npm run dev
 
 ```
+
+#### babel
+
+トランスパイラのためのプラグイン。
+新しい書き方で書いたものを古いブラウザでも対応できるようにしたもの
+
+module.exportsの一部に以下のように記述
+```
+ module:{
+   rules:[
+     {
+       //jsに対してbabel-loaderを適用
+       test:/\.js$/,
+       use:{
+         loader:'babel-loader',
+         options:{
+           presets:['@babel/preset-env']
+         }
+       }
+     }
+   ]
+
+```
