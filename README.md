@@ -143,8 +143,9 @@ package.json
 ```
 
 ### JSコンパイル
-``
-npx webpack   --mode development (*省略可能 --config ./webpack.config.js)
+```
+npx webpack   --mode development (省略可能 --config ./webpack.config.js)
 #package.jsonに記述していれば下記のようにかける
 npm run dev
+
 ```
