@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cheerio-httpcli": "^0.7.3"
+    "cheerio-httpcli": "^0.7.3",
+    "sugar": "^2.0.6"
   }
 }
