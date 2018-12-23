@@ -17,26 +17,37 @@ module.exports =  class GetFile{
      */
     get_recruits(){
       console.log(`${this.siteurl}の取得を開始します。`)
-      client.fetch(this.siteurl, (err, jQuery, res) => {
+      //同期的に使う
+      let result = client.fetchSync(this.siteurl)
 
-        if(err) {
-          console.log(res)
-          return false
-        }
+      if(result.err) {
+        console.log(result.res)
+        return false
+      }
+      this.jQuery = result.$
+      let total_recuit_info_arr = this.do_recurit_process()
+      return total_recuit_info_arr
+    }
 
-        this.jQuery = jQuery
+    /**
+     * １ページの情報
+     * @param  obj err     エラー
+     * @param  obj jQuery jquery
+     * @param  obj res  レスポンス
+     * @return array  求人の配列
+     */
+    do_recurit_process() {
 
-        let total_recuit_info_arr = []
-        this.jQuery('.c-job_offer-box').each((i,v) => {
-          //アロー演算子で記述しているので
-          //thisが同一オブジェクトをさすため使える
-          //jQuery()で囲めばJavaScriptのオブジェクトは
-          //jQueryのメソッドが使える
-          let total_recuit_info = this.get_single_recruit(this.jQuery(v))
-          total_recuit_info_arr.push(total_recuit_info)
-        })
-        console.log(total_recuit_info_arr)
+      let total_recuit_info_arr = []
+      this.jQuery('.c-job_offer-box').each((i,v) => {
+        //アロー演算子で記述しているので
+        //thisが同一オブジェクトをさすため使える
+        //jQuery()で囲めばJavaScriptのオブジェクトは
+        //jQueryのメソッドが使える
+        let total_recuit_info = this.get_single_recruit(this.jQuery(v))
+        total_recuit_info_arr.push(total_recuit_info)
       })
+      return total_recuit_info_arr
     }
 
     /**
