@@ -48,9 +48,14 @@ nodeコマンドで実行
 node require.js
 ```
 
-## node.jsでのスクレイピング
+## cheerio-httpを使ってnode.jsでのスクレイピング
 
-
+- node_sample
+  - package.json
+  - download-node.js requestを使ったダウンロード
+  - srcraping 生成元のディレクトリ
+    - getfile.js 求人情報の獲得クラス
+  - main.js 起動プラグラム
 
 ## webpack バンドル(モジュールバンドル)
 [webpack4入門](https://qiita.com/soarflat/items/28bf799f7e0335b68186)<br>

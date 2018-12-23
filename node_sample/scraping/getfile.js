@@ -25,6 +25,7 @@ module.exports =  class GetFile{
         return false
       }
       this.jQuery = result.$
+
       let total_recuit_info_arr = this.do_recurit_process()
       return total_recuit_info_arr
     }
