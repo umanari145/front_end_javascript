@@ -181,3 +181,42 @@ module.exportsの一部に以下のように記述
    ]
 
 ```
+
+
+## 総合演習
+
+複数のプログラムを1つにまとめてファイルを出力するツールのこと。
+バンドルとは束ねる、と言う意味。
+webpack以外にはBrowserifyなどが有名。
+
+### gulpとは?
+
+タスクランナー
+ウェブアプリ制作に置ける様々な処理を自動化させることのできるツール。
+
+sassのコンパイル
+ローカルサーバーの起動と自動更新
+weppackでのコンパイル
+監視
+etc・・・
+
+```
+//sassのタスクを実行
+npx gulp sass
+
+//webpackのタスクを実行
+npx gulp webpack
+
+//defaultのタスクを実行
+npx gulp
+```
+
+### ファイル構成
+
+- exercise
+  - package.json ライブラリ&スクリプト管理
+  - src 生成元のディレクトリ
+    - js  生成元js
+    - css 生成元css
+  - config.js コンパイルの設定ファイル
+  - gulpfile.js gulpの設定ファイル(タスクの記述)
