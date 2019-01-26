@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "cheerio-httpcli": "^0.7.3",
-    "sugar": "^2.0.6"
+    "node-env-file": "^0.1.8",
+    "sugar": "^2.0.6",
+    "sync-mysql": "^3.0.1"
   }
 }
