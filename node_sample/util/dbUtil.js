@@ -1,5 +1,6 @@
 const mysql = require('sync-mysql');
 const Sugar = require('Sugar');
+const log = require('log-to-file');
 
 module.exports =  class DButil{
 
@@ -26,6 +27,25 @@ module.exports =  class DButil{
      * @return array
      */
     select(sql){
+        log(sql, 'sql.log')
+        let res = this.con.query(sql);
+        if (res && res.length > 0) {
+            return res
+        } else {
+            return false;
+        }
+    }
+
+    /**
+     * 主キーでの取得
+     * @param  string table       テーブル名
+     * @param  string primary_key 主キー名
+     * @param  srting val         主キー値
+     * @return array
+     */
+    find(table, primary_key, val){
+        let sql = `SELECT * FROM ${table} WHERE ${primary_key} = '${val}' `
+        log(sql, 'sql.log')
         let res = this.con.query(sql);
         if (res && res.length > 0) {
             return res
@@ -50,13 +70,8 @@ module.exports =  class DButil{
 
         let column_str = columns.join(',')
         let values_str = values.join(',')
-
-        let insert_sql = Sugar.String('INSERT INTO {table} ({column_str}) VALUES ({values_str}) ').format({
-            table:table_name,
-            column_str:column_str,
-            values_str:values_str
-        }).raw;
-
+        let insert_sql = `INSERT INTO ${table_name} ( ${column_str} ) VALUES ( ${values_str})`
+        log(insert_sql, 'sql.log')
         let res = this.con.query(insert_sql);
         return res
     }
@@ -81,11 +96,11 @@ module.exports =  class DButil{
             total_values_arr.push(each_values_str)
         })
 
-        let bulk_insert_sql = Sugar.String('INSERT INTO {table} ({column_str}) VALUES {values_str}').format({
-            table:table_name,
-            column_str:columns_arr.join(","),
-            values_str:total_values_arr.join(",")
-        }).raw
+        let column_str = columns_arr.join(",")
+        let values_str = total_values_arr.join(",")
+
+        let bulk_insert_sql = `INSERT INTO ${table_name} (${column_str}) VALUES ${values_str}`
+        log(bulk_insert_sql, 'sql.log')
         let res = this.con.query(bulk_insert_sql);
         return res
     }
@@ -103,19 +118,14 @@ module.exports =  class DButil{
         let total_values_arr = new Array();
 
         let update_arr = new Array()
-        Sugar.Object(obj).forEach((v,k) =>{
-            let each_update_str = Sugar.String("{column_name} = '{value}'").format({
-                column_name:k,
-                value:v
-            }).raw
+        Sugar.Object(obj).forEach((value,column_name) =>{
+            let each_update_str = `${column_name} = '${value}'`
             update_arr.push(each_update_str)
         })
 
-        let update_sql = Sugar.String('UPDATE {table} SET {update_str} WHERE {where_str}').format({
-            table:table_name,
-            update_str:update_arr.join(","),
-            where_str:where_str
-        }).raw
+        let update_str = update_arr.join(",")
+        let update_sql = `UPDATE ${table_name} SET ${update_str} WHERE ${where_str}`
+        log(update_sql, 'sql.log')
         let res = this.con.query(update_sql);
         return res
     }
@@ -127,10 +137,8 @@ module.exports =  class DButil{
      * @return res レスポンスオブジェクト
      */
     delete(table_name, where_str){
-        let delete_sql = Sugar.String('DELETE FROM {table} WHERE {where_str}').format({
-            table:table_name,
-            where_str:where_str
-        }).raw
+        let delete_sql = `DELETE FROM ${table_name} WHERE ${where_str}`
+        log(delete_sql, 'sql.log')
         let res = this.con.query(delete_sql);
         return res
     }
