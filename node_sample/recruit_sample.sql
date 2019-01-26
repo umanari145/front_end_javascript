@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.7.20, for osx10.13 (x86_64)
 --
--- Host: localhost    Database: python_sample
+-- Host: localhost    Database: recruit
 -- ------------------------------------------------------
 -- Server version	5.7.20
 
@@ -23,12 +23,9 @@ DROP TABLE IF EXISTS `company`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `company` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) DEFAULT NULL,
-  `build_year` date DEFAULT NULL,
-  `member_cnt` int(11) DEFAULT NULL,
-  `average_age` float(3,1) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  `company_id` int(11) NOT NULL,
+  `company_name` varchar(255) NOT NULL,
+  PRIMARY KEY (`company_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -40,11 +37,11 @@ DROP TABLE IF EXISTS `recruit`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `recruit` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `recruit_id` int(11) NOT NULL AUTO_INCREMENT,
   `company_id` int(11) DEFAULT NULL,
   `low_salary` int(11) DEFAULT NULL,
   `high_salary` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`recruit_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -70,10 +67,10 @@ DROP TABLE IF EXISTS `skill`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `skill` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `skill_id` int(11) NOT NULL AUTO_INCREMENT,
   `skill` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`skill_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -85,4 +82,4 @@ CREATE TABLE `skill` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-13 12:16:02
+-- Dump completed on 2019-01-27  1:08:34
