@@ -5,13 +5,18 @@
 <body>
 
 
-<a href="#"class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">
+<a href="#"class="btn btn-lg btn-success" data-toggle="modal" data-target="#prefModal">
     あなたの住んでいるところは?
 </a>
+<div>
+    <span id="pref_name"></span>
+    <span id="city_name"></span>
+</div>
+<input type="hidden" id="pref_val" value="">
+<input type="hidden" id="city_val" value="">
 
-<div id="basicModal" class="modal fade" role="dialog">
+<div id="prefModal" class="modal fade" role="dialog">
   <div class="modal-dialog">
-
    <!-- Modal content-->
    <div class="modal-content">
      <div class="modal-header">
@@ -19,17 +24,39 @@
        <h4 class="modal-title">都道府県を選択して下さい</h4>
      </div>
      <div class="modal-body">
-        <table id="area_table" class="table">
+        <table id="pref_table" class="table">
 
         </table>
      </div>
      <div class="modal-footer">
-       <button type="button" class="btn btn-default" data-dismiss="modal">選択</button>
+       <button type="button" id="select_pref" class="btn btn-default" data-dismiss="modal">選択</button>
      </div>
    </div>
-
  </div>
 </div>
+
+<!--市区町村-->
+<div id="cityModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+   <!-- Modal content-->
+   <div class="modal-content">
+     <div class="modal-header">
+       <button type="button" class="close" data-dismiss="modal">&times;</button>
+       <h4 class="modal-title">市区町村を選択して下さい</h4>
+     </div>
+     <div class="modal-body">
+        <table id="city_table" class="table">
+
+        </table>
+     </div>
+     <div class="modal-footer">
+        <button type="button" id="back_to_pref" class="btn btn-info" data-dismiss="modal">戻る</button>
+        <button type="button" id="select_city" class="btn btn-default" data-dismiss="modal">選択</button>
+     </div>
+   </div>
+ </div>
+</div>
+
 <script type="text/javascript" src="./dest/js/app.js"></script>
 <link rel="stylesheet" type="text/css" href="./dest/css/index.css">
 </body>
