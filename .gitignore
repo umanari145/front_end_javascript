@@ -1,2 +1,5 @@
 /webpack_sample/node_modules/
 /node_sample/node_modules/
+/exercise/node_modules/
+/node_sample/.env
+/node_sample/*.log

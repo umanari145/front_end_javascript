@@ -1,2 +1,11 @@
 
 @import "./node_modules/bootstrap/scss/bootstrap";
+
+.area_wrap{
+    display: flex;
+    align-items: center;
+    label{
+        margin: 0 0 0 5px;
+        padding: 0;
+    }
+}

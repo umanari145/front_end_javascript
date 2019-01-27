@@ -3,11 +3,10 @@
 <head>
 <meta charset="utf-8" />
 <body>
-<button class="sample_btn btn btn-info" id="hoge">サンプルボタン
-</button>
+
 
 <a href="#"class="btn btn-lg btn-success" data-toggle="modal" data-target="#basicModal">
-  自分の住んでいるところ
+    あなたの住んでいるところは?
 </a>
 
 <div id="basicModal" class="modal fade" role="dialog">
@@ -20,7 +19,9 @@
        <h4 class="modal-title">都道府県を選択して下さい</h4>
      </div>
      <div class="modal-body">
+        <table id="area_table" class="table">
 
+        </table>
      </div>
      <div class="modal-footer">
        <button type="button" class="btn btn-default" data-dismiss="modal">選択</button>
@@ -29,7 +30,6 @@
 
  </div>
 </div>
-
 <script type="text/javascript" src="./dest/js/app.js"></script>
 <link rel="stylesheet" type="text/css" href="./dest/css/index.css">
 </body>

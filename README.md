@@ -34,10 +34,10 @@ node class.js
   - sample.html ブラウザから実行することもできる
 
 ```
-#nodeコマンドでimportは実行できない
+#es6はnodeコマンドでは実行できない
 × node import.js
 ```
-### node nodeでの読み込み方法
+### require nodeでの読み込み方法
 - require
   - modules.js modules.exportを使って外部に関数を外だし
   - lib/personClass.js module.exportsを使ってクラスを外部に外だし
@@ -55,9 +55,14 @@ node require.js
   - download-node.js requestを使ったダウンロード
   - srcraping 生成元のディレクトリ
     - getfile.js 求人情報の獲得クラス
+    - registRecruit.js 求人の登録クラス
+  - util ユーティルクラス
+    - dbUtil.js DBユーティリティ
   - main.js 起動プラグラム
+  - .env(.sample) 設定ファイル
+  - package.json(-lock) npmライブラリ情報 
 
-## webpack バンドル(モジュールバンドル)
+## webpack (モジュールバンドラ)
 [webpack4入門](https://qiita.com/soarflat/items/28bf799f7e0335b68186)<br>
 [npmとwebpack4でビルド - jQueryからの次のステップ](https://qiita.com/civic/items/82c0184bcadc50965f91)
 
@@ -117,10 +122,10 @@ package.json
 
 ```
 
-下記の部分でライブラリの管理をしている
-```npm install(i)```でpackage.jsonに書かれているライブラリがインストールされる
-```npm install (ライブラリ名)```で個別ライブラリが```./node_modules```以下にインストールされる
---save-dev(--D) オプションをつけるとdevDependenciesに記録される(開発時に実行される)
+下記の部分でライブラリの管理をしている<br>
+```npm install(i)```でpackage.jsonに書かれているライブラリがインストールされる<br>
+```npm install (ライブラリ名)```で個別ライブラリが```./node_modules```以下にインストールされる<br>
+--save-dev(--D) オプションをつけるとdevDependenciesに記録される(開発時に実行される)<br>
 
 ```
 "devDependencies": {
@@ -149,7 +154,7 @@ package.json
 
 ### JSコンパイル
 ```
-npx webpack   --mode development (省略可能 --config ./webpack.config.js)
+npx webpack  --mode development (省略可能 --config ./webpack.config.js)
 #package.jsonに記述していれば下記のようにかける
 npm run dev
 
@@ -204,7 +209,7 @@ npx gulp sass
 npx gulp webpack
 
 //defaultのタスクを実行
-npx gulp
+npx gulp (default:省略可能)
 ```
 
 ### ファイル構成

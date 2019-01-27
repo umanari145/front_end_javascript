@@ -4,7 +4,7 @@ const gulp_sass = require('gulp-sass');
 const runSequence = require('run-sequence');
 const browserSync = require('browser-sync').create();
 const path = require('path')
-//実ファイルの読み込み
+//設定ファイルの読み込み
 const config = require('./config.js');
 
 //js コンパイル
@@ -22,19 +22,21 @@ gulp.task('sass',() => {
           .pipe(gulp.dest(config.css.dest));
 });
 
-gulp.task('watch', function() {
+//対象ファイルが更新されたらそれぞれのメソッドを更新
+gulp.task('watch', () => {
   let watchList = [
     config.css.src,
     config.js.src
   ];
   gulp.watch(config.css.src, ['sass'] );
-	gulp.watch(config.js.src, ['webpack'] );
+  gulp.watch(config.js.src, ['webpack'] );
+
   gulp.watch( watchList , () => {
     browserReload()
   });
 });
 
-gulp.task('server', function() {
+gulp.task('server', () => {
   browserSync.init({
       server: {
         baseDir:config.dirname
