@@ -20,6 +20,8 @@ module.exports = {
   },
   // webpackの設定
   webpack: {
+    //これをつけるとデバッグが簡単に!
+    devtool: 'inline-source-map',
     entry: src + '/js/app.js',
     output: {
       filename: 'app.js'

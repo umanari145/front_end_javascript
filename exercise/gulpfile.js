@@ -36,6 +36,7 @@ gulp.task('watch', () => {
   });
 });
 
+//ホットロードの立ち上げ
 gulp.task('server', () => {
   browserSync.init({
       server: {
@@ -44,6 +45,7 @@ gulp.task('server', () => {
   });
 });
 
+//リロード
 const browserReload = function() {
   browserSync.reload()
 }

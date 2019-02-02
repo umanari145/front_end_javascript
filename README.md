@@ -26,22 +26,24 @@ node class.js
 - 名前空間の汚染を防ぐ
 
 
-### import es6のモジュールの読み込み方法
-- import
+### 外部ファイル化とモジュールの読み込み方法
+- import(es6から使えるようになった用法)
   - modules.js exportを使って外部に関数を外だし
   - lib/personClass.js exportを使ってクラスを外部に外だし
   - import.js 外部の関数やクラスをこの方法で読み込むことができる
   - sample.html ブラウザから実行することもできる
 
+- require(nodeなどで使われていた方法)
+  - modules.js modules.exportを使って外部に関数を外だし
+  - lib/personClass.js module.exportsを使ってクラスを外部に外だし
+  - require.js 外部の関数やクラスをこの方法で読み込むことができる  
+
 ```
 #es6はnodeコマンドでは実行できない
 × node import.js
+*後述するbabelを使えば可能なことも・・・・
 ```
-### require nodeでの読み込み方法
-- require
-  - modules.js modules.exportを使って外部に関数を外だし
-  - lib/personClass.js module.exportsを使ってクラスを外部に外だし
-  - require.js 外部の関数やクラスをこの方法で読み込むことができる
+
 
 ```
 nodeコマンドで実行
@@ -60,7 +62,7 @@ node require.js
     - dbUtil.js DBユーティリティ
   - main.js 起動プラグラム
   - .env(.sample) 設定ファイル
-  - package.json(-lock) npmライブラリ情報 
+  - package.json(-lock) npmライブラリ情報
 
 ## webpack (モジュールバンドラ)
 [webpack4入門](https://qiita.com/soarflat/items/28bf799f7e0335b68186)<br>
@@ -215,9 +217,10 @@ npx gulp (default:省略可能)
 ### ファイル構成
 
 - exercise
-  - package.json ライブラリ&スクリプト管理
+  - package.json(-lock) ライブラリ&スクリプト管理
   - src 生成元のディレクトリ
     - js  生成元js
     - css 生成元css
   - config.js コンパイルの設定ファイル
   - gulpfile.js gulpの設定ファイル(タスクの記述)
+  - index.html 表示されるHTML
