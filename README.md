@@ -80,6 +80,7 @@ npmでのライブラリ情報の管理や実行スクリプトの管理など�
 
 - webpack_sample
   - package.json ライブラリ&スクリプト管理
+  - dest 成果物
   - src 生成元のディレクトリ
     - main.js ライブラリのインポートのjs
   - app.js 生成後のjs
@@ -218,9 +219,11 @@ npx gulp (default:省略可能)
 
 - exercise
   - package.json(-lock) ライブラリ&スクリプト管理
+  - dest 成果物
   - src 生成元のディレクトリ
     - js  生成元js
     - css 生成元css
+    - html 生成元pug
   - config.js コンパイルの設定ファイル
   - gulpfile.js gulpの設定ファイル(タスクの記述)
   - index.html 表示されるHTML
