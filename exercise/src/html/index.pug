@@ -1,0 +1,90 @@
+doctype html
+html(lang="ja")
+    header
+        meta(charset="utf-8")
+    body
+        div(class="container main_wrapper")
+            form(action="", method="POST", class="original_form")
+                ul
+                    li.form-group
+                        label.form-label お名前
+                        input(class="form-control w-25", name="name", value="")
+                    li.form-group
+                        label.form-label 都道府県
+                        input(class="form-control w-25", name="pref", value="", id="input_pref_str")
+                        a(href="#", class="btn btn-lg btn-success ml10", data-toggle="modal", data-target="#prefModal") 選択
+                    li.form-group
+                        label.form-label 住所
+                        input(class="form-control w-50", name="address", value="", id="input_address_str")
+                    li.form-group
+                        label.form-label E-mail
+                        input(class="form-control w-50", name="email", value="")
+                    li.form-group
+                        label.form-label 生年月日
+                        select(class="form-control", name="birth_year", value="")
+                            option(value="")
+                            - for (var i = 1900; i < 2020; i++)
+                                option(value=i) #{i}
+                        span(class="mr10 ml10") 年
+
+                        select(class="form-control", name="birth_month", value="")
+                            option(value="")
+                            - for (var j = 1; j <= 12; j++)
+                                option(value=j) #{j}
+
+                        span(class="mr10 ml10") 月
+
+                        select(class="form-control", name="birth_day", value="")
+                            option(value="")
+                            - for (var k = 1; k <= 31; k++)
+                                option(value=k) #{k}
+
+                        span(class="mr10 ml10") 日
+
+                    li.form-group
+                        label.form-label 性別
+                        -
+                            var sexList = [
+                                {
+                                    sex_val:1,
+                                    sex_label:'男性'
+                                },
+                                {
+                                    sex_val:2,
+                                    sex_label:'女性'
+                                }
+                            ];
+                        for val in sexList
+                            input(type="radio",class="form-control",name="sex",value=val.sex_val,id="sex_" + val.sex_val)
+                            label(for="sex_" + val.sex_val ,class="ml5 mr10") #{val.sex_label}
+
+                    li.form-group
+                        label.form-label 交通手段
+                        -
+                            var transList = [
+                                {
+                                    trans_val:1,
+                                    trans_label:'徒歩'
+                                },
+                                {
+                                    trans_val:2,
+                                    trans_label:'バス'
+                                },
+                                {
+                                    trans_val:3,
+                                    trans_label:'電車'
+                                }
+                            ];
+                        for val in transList
+                            input(type="checkbox",class="form-control",name="trans[]",value=val.trans_val,id="trans_" + val.trans_val)
+                            label(for="trans_" + val.trans_val ,class="ml5 mr10") #{val.trans_label}
+                    li.form-group
+                        label.form-label 備考
+                        textarea(class="form-control", class="w-50",style="height:100px;")
+
+                    li.form-group
+                        input(type="submit", class="btn btn-primary", value="登録")
+
+        include area
+    script(type="text/javascript", src="./dest/js/app.js")
+    link(rel="stylesheet", type="text/css" href="./dest/css/index.css")

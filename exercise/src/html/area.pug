@@ -1,0 +1,24 @@
+//県の選択
+div(id="prefModal",class="modal fade",role="dialog")
+    div.modal-dialog
+        div.modal-content
+            div.modal-header
+                button(type="button",class="close",data-dismiss="modal") &times;
+                h4.modal-title 都道府県を選択して下さい
+            div.modal-body
+                table(id="pref_table",class="table")
+            div.modal-footer
+                button(type="button",id="select_pref", class="btn btn-primary",data-dismiss="modal") 選択
+
+//市区町村の選択
+div(id="cityModal", class="modal fade", role="dialog")
+    div.modal-dialog
+        div.modal-content
+            div.modal-header
+                button(type="button", class="close", data-dismiss="modal") &times;
+                h4.modal-title 市区町村を選択して下さい
+            div.modal-body
+                table(id="city_table", class="table")
+            div.modal-footer
+                button(type="button", id="back_to_pref", class="btn btn-info", data-dismiss="modal") 戻る
+                button(type="button", id="select_city", class="btn btn-primary", data-dismiss="modal") 選択
