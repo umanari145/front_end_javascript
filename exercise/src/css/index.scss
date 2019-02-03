@@ -1,5 +1,10 @@
 
 @import "./node_modules/bootstrap/scss/bootstrap";
+@import "basic_util.scss";
+
+.main_wrapper{
+    margin-top: 100px;
+}
 
 .area_wrap{
     display: flex;
@@ -11,4 +16,27 @@
 }
 .modal-dialog {
     max-width: 1020px;
+}
+
+.modal-body{
+    overflow-y: scroll;
+    max-height: 400px;
+}
+
+.form-group{
+    display: flex;
+    align-items: center;
+}
+
+label{
+    margin-bottom: 0;
+}
+
+.form-label{
+    margin: 0 10px 0 0;
+    min-width: 100px;
+}
+
+.form-control{
+    width: auto;
 }

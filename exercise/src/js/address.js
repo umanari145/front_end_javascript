@@ -66,7 +66,8 @@ module.exports = class AddressClass {
         let pref_val = checked_pref_ele.val()
         let pref_name = checked_pref_ele.attr('data-areaname')
 
-        $("#pref_name").html(pref_name)
+
+        $("#input_pref_str").val(pref_name)
         $("#pref_val").html(pref_val)
 
         $.ajax({
@@ -102,7 +103,8 @@ module.exports = class AddressClass {
 
         let city_val = checked_city_ele.val()
         let city_name = checked_city_ele.attr('data-areaname')
-        $('#city_name').html(city_name)
+
+        $('#input_address_str').val(city_name)
         $('#city_val').html(city_val)
     }
 

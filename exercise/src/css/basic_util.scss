@@ -1,0 +1,64 @@
+@for $i from 1 through 8 {
+  .label-width-control_#{$i * 25} {
+    display: inline-block;
+    width: #{$i * 25}px;
+  }
+}
+
+//margin,paddingの上右下左
+$direction: t,r,b,l;
+$d2:'';
+@each $d in $direction {
+  @if $d == 't' {
+    $d2:'top';
+  } @elseif $d =='r' {
+    $d2:'right';
+  } @elseif $d =='b' {
+    $d2:'bottom';
+  } @elseif $d =='l' {
+    $d2:'left';
+  }
+  @for $i from 1 through 5 {
+    $size:$i * 5;
+    .m#{$d}#{$size} {
+      margin-#{$d2}:#{$size}px !important;
+    }
+    .p#{$d}#{$size} {
+      padding-#{$d2}:#{$size}px !important;
+    }
+  }
+}
+
+$jusity_content: fs,fe,c,sp,sa;
+$align-items: fs,fe,c;
+$jc2:'flex-start';
+$ai2:'flex-end';
+@each $jc in $jusity_content {
+  @if $jc == 'fs' {
+    $jc2:'flex-start';
+  } @elseif $jc =='fe' {
+    $jc2:'flex-end';
+  } @elseif $jc =='c' {
+    $jc2:'center';
+  } @elseif $jc =='sp' {
+    $jc2:'space-between';
+  } @elseif $jc =='sa' {
+    $jc2: 'space-around';
+  }
+
+  @each $ai in $align-items {
+    @if $ai == 'fs' {
+      $ai2:'flex-start';
+    } @elseif $ai =='fe' {
+      $ai2:'flex-end';
+    } @elseif $ai =='c' {
+      $ai2:'center';
+    }
+
+    .flex_#{$jc}_#{$ai}{
+      display: flex;
+      justify-content: #{$jc2};
+      align-items: #{$ai2};
+    }
+  }
+}
