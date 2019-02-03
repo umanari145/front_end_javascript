@@ -11,12 +11,18 @@ module.exports = {
   js: {
     src: src + '/js/**/*.js',
     dest: dest + '/js/',
-    uglify: true
+    uglify: true,
+
   },
   // cssのビルド設定
   css: {
-    src: src + '/css/**/*.scss',
+    src: src + '/css/index.scss',
     dest: dest + '/css/'
+  },
+  //html
+  html: {
+    src: src +'/html/index.pug',
+    dest: dirname +'/',
   },
   // webpackの設定
   webpack: {
@@ -26,5 +32,19 @@ module.exports = {
     output: {
       filename: 'app.js'
     },
+    module:{
+      rules:[
+        {
+          //jsに対してbabel-loaderを適用
+          test:/\.js$/,
+          use:{
+            loader:'babel-loader',
+            options:{
+              presets:['@babel/preset-env']
+            }
+          }
+        }
+      ]
+    }
   }
 }
