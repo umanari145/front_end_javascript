@@ -1,5 +1,4 @@
 const $ = require('jquery');
-//modalメソッドなどはbootstrapで実行
 require('bootstrap');
 
 module.exports = class AddressClass {

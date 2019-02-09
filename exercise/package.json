@@ -28,6 +28,8 @@
     "pug": "^2.0.3",
     "pug-cli": "^1.0.0-alpha6",
     "run-sequence": "^2.2.1",
-    "webpack": "^4.28.2"
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3",
+    "webpack-stream": "^5.2.1"
   }
 }

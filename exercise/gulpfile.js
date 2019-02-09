@@ -1,5 +1,6 @@
 const gulp = require('gulp');
-const webpack = require('gulp-webpack');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
 const gulp_sass = require('gulp-sass');
 const runSequence = require('run-sequence');
 const browserSync = require('browser-sync').create();
@@ -10,10 +11,9 @@ const pug = require('gulp-pug');
 
 //js コンパイル
 gulp.task('webpack',() => {
-    return gulp.src(config.webpack.entry)
-        .pipe(webpack(config.webpack))
-        .pipe(gulp.dest(config.js.dest));
-});
+    return webpackStream(config.webpack, webpack)
+      .pipe(gulp.dest(config.js.dest));
+ });
 
 
 
@@ -28,10 +28,8 @@ gulp.task('sass',() => {
 gulp.task('pug', () => {
   console.log(config.html.dest)
   return gulp.src(config.html.src)
-  .pipe(pug({
-      pretty:true
-  }))
-  .pipe(gulp.dest(config.html.dest));
+        .pipe(pug({pretty:true}))
+        .pipe(gulp.dest(config.html.dest));
 });
 
 //対象ファイルが更新されたらそれぞれのメソッドを更新
@@ -67,6 +65,7 @@ const browserReload = function() {
 gulp.task('default', () => {
   return runSequence(
     'sass',
+    'pug',
     'webpack',
     'server',
     'watch'
