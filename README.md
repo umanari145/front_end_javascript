@@ -44,11 +44,12 @@ node class.js
 *後述するbabelを使えば可能なことも・・・・
 ```
 
-
 ```
 nodeコマンドで実行
 node require.js
 ```
+
+参考リンク https://qiita.com/rooooomania/items/4c999d93ae745e9d8657
 
 ## cheerio-httpを使ってnode.jsでのスクレイピング
 
@@ -189,6 +190,32 @@ module.exportsの一部に以下のように記述
    ]
 
 ```
+
+
+## laravel-mix
+webpackのラッパー(あるライブラリの機能を内包したライブラリで元ライブラリよりも便利、高性能になっていることが多い)
+laravelの中に元々入っているが、独立して使うこともできる
+
+ラッパーの説明に関して
+https://wa3.i-3-i.info/word191.html
+
+
+### ファイル構成(webpackと同じ)
+
+- laravel_mix
+  - package.json ライブラリ&スクリプト管理
+  - dist 成果物
+  - src 生成元のディレクトリ
+    - main.js ライブラリのインポートのjs
+  - app.js 生成後のjs
+  - index.html
+
+```
+//実行
+npm run dev
+
+```
+
 
 ## 総合演習
 gulpを使い、各タスクを実行
