@@ -193,12 +193,12 @@ module.exportsの一部に以下のように記述
 
 
 ## laravel-mix
-webpackのラッパー(あるライブラリの機能を内包したライブラリで元ライブラリよりも便利、高性能になっていることが多い)
+webpackのラッパー(あるライブラリの機能を内包したライブラリで元ライブラリよりも便利、高性能になっていることが多い。今回の例でいうとbabelが内蔵されている)
 laravelの中に元々入っているが、独立して使うこともできる
-
 ラッパーの説明に関して
 https://wa3.i-3-i.info/word191.html
 
+後述するgulpのタスクランナーとしての昨日も持っている
 
 ### ファイル構成(webpackと同じ)
 
@@ -240,6 +240,10 @@ npx gulp webpack
 
 //defaultのタスクを実行
 npx gulp (default:省略可能)
+
+//laravel-mixの実行タスク
+npm run dev
+
 ```
 
 ### ファイル構成
@@ -251,6 +255,8 @@ npx gulp (default:省略可能)
     - js  生成元js
     - css 生成元css
     - html 生成元pug
-  - config.js コンパイルの設定ファイル
+  - config.js コンパイルの設定ファイル(gulp実行時の設定)
   - gulpfile.js gulpの設定ファイル(タスクの記述)
+  - mix-maniflest.json laravel-mix実行時の結果の記述
+  - webpack.mix.js laravel-mixの設定ファイル(タスクの記述)  
   - index.html 表示されるHTML

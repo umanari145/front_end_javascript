@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "watch": "NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "hot": "NODE_ENV=development webpack-dev-server --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
+    "production": "NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "keywords": [],
   "author": "",
@@ -15,6 +19,7 @@
     "babel-loader": "^8.0.4",
     "bootstrap": "^4.2.1",
     "browser-sync": "^2.26.3",
+    "cross-env": "^5.2.0",
     "dotenv": "^6.2.0",
     "dotenv-webpack": "^1.7.0",
     "fs": "0.0.1-security",
@@ -23,7 +28,10 @@
     "gulp-sass": "^4.0.2",
     "gulp-webpack": "^1.5.0",
     "jquery": "^3.3.1",
+    "laravel-mix": "^4.0.15",
+    "laravel-mix-pug": "^0.3.0",
     "node-env-file": "^0.1.8",
+    "node-sass": "^4.11.0",
     "popper.js": "^1.14.6",
     "pug": "^2.0.3",
     "pug-cli": "^1.0.0-alpha6",
@@ -31,5 +39,10 @@
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
     "webpack-stream": "^5.2.1"
+  },
+  "devDependencies": {
+    "resolve-url-loader": "^2.3.1",
+    "sass-loader": "^7.1.0",
+    "vue-template-compiler": "^2.6.9"
   }
 }
