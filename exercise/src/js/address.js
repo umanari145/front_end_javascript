@@ -126,10 +126,10 @@ module.exports = class AddressClass {
 
             let t_index = i + 1
             if (t_index == 1) area_html = '<tr>'
-            area_html += `<td>`
-            area_html += `<span class="area_wrap"><input type="radio" name="${type}" value="${checkbox_valname}" id="${label_id}" data-areaname="${each_data[label_name]}">`
-            area_html += `<label for="${label_id}">${each_data[label_name]}</label></span>`
-            area_html += `</td>`
+            area_html += `<td>
+<span class="area_wrap"><input type="radio" name="${type}" value="${checkbox_valname}" id="${label_id}" data-areaname="${each_data[label_name]}">
+<label for="${label_id}">${each_data[label_name]}</label></span>
+</td>`
             if (t_index % oneline == 0) area_html +=` </tr><tr>`
         }
         return area_html
