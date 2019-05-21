@@ -1,6 +1,3 @@
-/webpack_sample/node_modules/
-/laravel_mix/node_modules/
-/node_sample/node_modules/
-/exercise/node_modules/
-/node_sample/.env
-/node_sample/*.log
+/**/node_modules/
+/**/.env
+/**/*.log
