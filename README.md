@@ -32,6 +32,7 @@ node class.js
   - lib/ exportを使ってクラスを外部に外だし(様々な呼び出し方)
   - lib2/ exportを使ってクラスを外部に外だし(一括で呼ぶ呼び出し方)
   - import.js(import2.js) 外部の関数やクラスをこの方法で読み込むことができる
+  - variables 変数の外だし
   - sample.html ブラウザから実行することもできる
 
 - require(nodeなどで使われていた方法)

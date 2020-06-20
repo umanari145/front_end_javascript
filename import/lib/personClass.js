@@ -7,4 +7,8 @@ export class PersonClass{
   printName(){
     console.log(`${this.name} クラスの中に入れている名前です。`)
   }
+
+  static sampleMethod() {
+    console.log( "本日は晴天なり");
+  }
 }

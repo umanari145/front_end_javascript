@@ -16,6 +16,9 @@ import {PersonClass as pclass} from './lib/personClass.js'
 const p = new pclass(99,'pclass');
 p.printName()
 
+console.log('--静的クラス--')
+pclass.sampleMethod();
+
 //defaultが付いている場合は命名が決定している
 import MemberClass from './lib/memberClass.js'
 //下記はエラー
@@ -27,3 +30,8 @@ member.printName()
 
 //const member = new memberClass(99,'山田太郎');
 //member.printName()
+import * as config from './variables.js';
+
+console.table(config.url);
+console.table(config.email);
+console.table(config.name);
