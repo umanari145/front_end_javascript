@@ -27,7 +27,7 @@
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.2",
     "gulp-webpack": "^1.5.0",
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "laravel-mix": "^4.0.15",
     "laravel-mix-pug": "^0.3.0",
     "node-env-file": "^0.1.8",
