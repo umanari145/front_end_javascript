@@ -33,7 +33,7 @@
     "node-env-file": "^0.1.8",
     "node-sass": "^4.11.0",
     "popper.js": "^1.14.6",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "pug-cli": "^1.0.0-alpha6",
     "run-sequence": "^2.2.1",
     "webpack": "^4.29.3",
