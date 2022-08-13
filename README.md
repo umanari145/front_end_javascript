@@ -44,6 +44,9 @@ node class.js
 #es6はnodeコマンドでは実行できない
 × node import.js
 *後述するbabelを使えば可能なことも・・・・
+
+package.jsonにtype=moduleを記載すればnodeでもimport exportが使える
+
 ```
 
 ```
