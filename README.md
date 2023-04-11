@@ -267,3 +267,14 @@ npm run dev
   - mix-maniflest.json laravel-mix実行時の結果の記述
   - webpack.mix.js laravel-mixの設定ファイル(タスクの記述)  
   - index.html 表示されるHTML
+
+
+------------ 2023/04 移行少しずつリニューアル　------------ 
+
+laravel-mix　App
+```
+npm run mix
+```
+
+http://localhost/laravel_mix/sample.html
+にアクセスが可能

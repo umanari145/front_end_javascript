@@ -1,0 +1,24 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "## es6sample ECMAScript6の基本構文 - es6sample   - sample.js es6の基本の記法     - let, const     - ブロックスコープ     - functionの初期値     - アロー関数     - thisのスコープに関して   - class.js     - 基本的なクラスの書き方     - 継承",
+  "main": "index.js",
+  "scripts": {
+    "mix": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./laravel_mix/webpack.mix.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/umanari145/front_end_javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/umanari145/front_end_javascript/issues"
+  },
+  "homepage": "https://github.com/umanari145/front_end_javascript#readme",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "jquery": "^3.6.4",
+    "laravel-mix": "^6.0.49"
+  }
+}
