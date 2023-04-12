@@ -1,6 +1,7 @@
 version: '3'
 services:
   php:
+    container_name: js_php
     build:
         context: "./docker/php"
         dockerfile: "Dockerfile"    

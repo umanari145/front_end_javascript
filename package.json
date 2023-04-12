@@ -4,7 +4,9 @@
   "description": "## es6sample ECMAScript6の基本構文 - es6sample   - sample.js es6の基本の記法     - let, const     - ブロックスコープ     - functionの初期値     - アロー関数     - thisのスコープに関して   - class.js     - 基本的なクラスの書き方     - 継承",
   "main": "index.js",
   "scripts": {
-    "mix": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./laravel_mix/webpack.mix.js"
+    "mix": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./laravel_mix/webpack.mix.js",
+    "todo-mix": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./to_do_app/webpack.mix.js",
+    "todo-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./to_do_app/webpack.mix.js watch"
   },
   "repository": {
     "type": "git",
