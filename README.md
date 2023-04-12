@@ -278,3 +278,18 @@ npm run mix
 
 http://localhost/laravel_mix/sample.html
 にアクセスが可能
+
+- to_do_app(生JavaScript)
+  - dist 成果物
+  - src 生成元のディレクトリ
+    - main.js  生成元js
+  - sample.html 画面に表示されるhtml
+  - webpack.mix.js laravel-mixの設定ファイル(タスクの記述)  
+
+
+```
+//build
+npm run todo-mix
+// 開発時
+npm run todo-watch
+```
