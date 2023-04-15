@@ -276,7 +276,7 @@ laravel-mix　App
 npm run mix
 ```
 
-http://localhost/laravel_mix/sample.html
+http://localhost/to_do_app/sample.html
 にアクセスが可能
 
 - to_do_app(生JavaScript)
@@ -292,4 +292,23 @@ http://localhost/laravel_mix/sample.html
 npm run todo-mix
 // 開発時
 npm run todo-watch
+```
+
+
+http://localhost/to_do_app_vue/sample.html
+にアクセスが可能
+
+- to_do_app_vue(CDN vue)
+  - dist 成果物
+  - src 生成元のディレクトリ
+    - main.js  生成元js
+  - sample.html 画面に表示されるhtml
+  - webpack.mix.js laravel-mixの設定ファイル(タスクの記述)  
+
+
+```
+//build
+npm run vue-mix
+// 開発時
+npm run vue-watch
 ```
