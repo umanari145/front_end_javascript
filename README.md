@@ -305,6 +305,10 @@ http://localhost/to_do_app_vue/sample.html
   - sample.html 画面に表示されるhtml
   - webpack.mix.js laravel-mixの設定ファイル(タスクの記述)  
 
+http-vue-loaderライブラリ<br>
+componentをcdnで使える
+https://macoblog.com/vuejs-cdn-spa/
+
 
 ```
 //build
