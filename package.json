@@ -6,7 +6,9 @@
   "scripts": {
     "mix": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./laravel_mix/webpack.mix.js",
     "todo-mix": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./to_do_app/webpack.mix.js",
-    "todo-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./to_do_app/webpack.mix.js watch"
+    "todo-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./to_do_app/webpack.mix.js watch",
+    "vue-mix": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./to_do_app_vue/webpack.mix.js",
+    "vue-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./to_do_app_vue/webpack.mix.js watch"
   },
   "repository": {
     "type": "git",

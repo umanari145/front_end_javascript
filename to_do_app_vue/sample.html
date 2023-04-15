@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<script src="https://unpkg.com/vue@next"></script>
+<body>
+    <div id="app">
+        <div>
+            <input type="text" v-model="task_name" placeholder="TODOを入力" id="contents" >
+            <input type="button" name="todo" value="追加" id="add_to_btn" v-on:click="add_task">
+        </div>
+        <div>
+            <div>未完了のTODO</div>
+            <ul id="unfinished_todo">
+                <li v-for="(unfinished_task, index) in unfinished_tasks">
+                    <span class="text">{{unfinished_task}}</span>
+                    <input type="button" name="finish" value="完了" class="finish_button" v-on:click="finish_task(index)">
+                    <input type="button" name="delete" value="削除" class="delete_button" v-on:click="delete_task(index)">
+                </li>
+            </ul>
+        </div>
+        <div>
+            <div>完了したTODO</div>
+            <ul id="finished_todo">
+                <li v-for="(finished_task, index) in finished_tasks">
+                    <span class="text">{{finished_task}}</span>
+                    <input type="button" name="delete" value="戻る" class="back_button" v-on:click="back_task(index)">
+                </li>
+            </ul>
+        </div>    
+    </div>
+    <script type="text/javascript" src="./dist/app.js"></script>
+</body>
+
+</html>
