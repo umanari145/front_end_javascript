@@ -269,7 +269,7 @@ npm run dev
   - index.html 表示されるHTML
 
 
------------- 2023/04 移行少しずつリニューアル　------------ 
+------------ 2023/04 移行少しずつリニューアル(dockerやtypescriptなど)　------------ 
 
 laravel-mix　App
 ```
@@ -315,4 +315,10 @@ https://macoblog.com/vuejs-cdn-spa/
 npm run vue-mix
 // 開発時
 npm run vue-watch
+```
+
+es6sample
+typescriptのコンパイル
+```
+docker exec  js_php npx tsc --allowjs  ./es6sample/src/class.ts --outFile ./es6sample/class.js 
 ```
