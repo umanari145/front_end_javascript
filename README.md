@@ -317,8 +317,9 @@ npm run vue-mix
 npm run vue-watch
 ```
 
-es6sample
-typescriptのコンパイル
+es6sample<br>
+typescriptのコンパイル<br>
+(エラーはでるが一応変換できる)
 ```
-docker exec  js_php npx tsc --allowjs  ./es6sample/src/class.ts --outFile ./es6sample/class.js 
+docker exec  js_php npx tsc --allowjs  --target ES6 --module ES6 ./es6sample/src/class.ts --outFile ./es6sample/class.js
 ```

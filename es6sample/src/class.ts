@@ -16,7 +16,7 @@ let personClass = new PersonClass(1, "太郎")
 personClass.printName()
 
 
-class StudentClass extends PersonClass{
+class StudentClass extends PersonClass {
   
   id: number;
   name: string;
