@@ -323,3 +323,6 @@ typescriptのコンパイル<br>
 ```
 docker exec  js_php npx tsc --allowjs  --target ES6 --module ES6 ./es6sample/src/class.ts --outFile ./es6sample/class.js
 ```
+
+ts_webapp <br>
+typescriptでのwebアプリ
