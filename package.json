@@ -8,7 +8,9 @@
     "todo-mix": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./to_do_app/webpack.mix.js",
     "todo-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./to_do_app/webpack.mix.js watch",
     "vue-mix": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./to_do_app_vue/webpack.mix.js",
-    "vue-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./to_do_app_vue/webpack.mix.js watch"
+    "vue-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./to_do_app_vue/webpack.mix.js watch",
+    "ts-mix": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./ts_webapp/webpack.mix.js",
+    "ts-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./ts_webapp/webpack.mix.js watch"
   },
   "repository": {
     "type": "git",
@@ -21,9 +23,16 @@
   },
   "homepage": "https://github.com/umanari145/front_end_javascript#readme",
   "dependencies": {
+    "bootstrap": "^5.2.3",
     "cross-env": "^7.0.3",
     "jquery": "^3.6.4",
     "laravel-mix": "^6.0.49",
     "typescript": "^5.0.4"
+  },
+  "devDependencies": {
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.62.0",
+    "sass-loader": "^12.6.0",
+    "ts-loader": "^9.4.2"
   }
 }

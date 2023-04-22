@@ -326,3 +326,11 @@ docker exec  js_php npx tsc --allowjs  --target ES6 --module ES6 ./es6sample/src
 
 ts_webapp <br>
 typescriptでのwebアプリ
+
+- ts_webapp
+  - dist 成果物
+  - src 生成元のディレクトリ
+    - js/index.js  生成元js
+    - css/app.css  生成css
+  - index.html 画面に表示されるhtml
+  - webpack.mix.js laravel-mixの設定ファイル(タスクの記述)  
