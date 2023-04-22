@@ -332,5 +332,15 @@ typescriptでのwebアプリ
   - src 生成元のディレクトリ
     - js/index.js  生成元js
     - css/app.css  生成css
-  - index.html 画面に表示されるhtml
+  - index.php 画面に表示されるhtml
   - webpack.mix.js laravel-mixの設定ファイル(タスクの記述)  
+
+build
+```
+docker exec js_php npm run ts-mix
+```
+
+watch
+```
+docker exec js_php npm run ts-watch
+```

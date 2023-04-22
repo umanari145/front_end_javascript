@@ -9,22 +9,22 @@
 </head>
 <body>
     <h1>看板ボード</h2>
-    <div>
-        <div>
+    <div class="w-75">
+        <div class="d-flex justify-content-between w-75">
             <h2>タスクを新規作成</h2>
-            <button>作成</button>      
+            <button id="add_task_button">作成</button>
         </div>
         <div>
             タイトル
             <div>
-                <input type="text">
+                <input type="text" class="d-block w-75" id="add_task_area">
             </div>
         </div>
     </div>
     <div class="mt-3 d-flex justify-content-between w-75">
         <div class="w-100">
             <div class="text-center">TODO</div>
-            <div>
+            <div id="to_do_inner_area">
 
             </div>
         </div>
@@ -41,6 +41,14 @@
             </div>
         </div>
     </div>
-    <script type="text/javascript" src="./dist/js/index.js"></script>
+    <div class="d-none">
+        <div id="to_do_task_copy">
+            <li> 
+                <span class="to_do_task_label"></span>
+                <button" name="to_do_task" class="delete_task">削除</button>
+            </li>
+        </div>
+    </div>
+    <script type="text/javascript" src="./dist/js/index.js?hoge=<?php echo time(); ?>"></script>
 </body>
 </html>
