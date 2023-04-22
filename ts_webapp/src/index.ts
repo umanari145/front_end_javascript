@@ -1,0 +1,1 @@
+const hobby = getHobby();
