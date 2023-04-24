@@ -1,25 +1,19 @@
-export class Task {
-    task_area_selector: string;
-    task_add_selector: string;
+import {v4 as uuid} from 'uuid';
 
-    constructor(
-        task_area_selector: string,
-        task_add_selector: string
-    ) {
-        this.task_area_selector = task_area_selector;
-        this.task_add_selector = task_add_selector;
-    }
+enum TaskStatus {
+    TODO = 'TODO',
+    DOING = 'DOING',
+    DONE = 'DONE'
+}
 
-    addTaskTodoEvent(): void {
-        const task_element: HTMLElement = document.getElementById(this.task_add_selector) as HTMLElement
-        task_element.addEventListener('click', (event: MouseEvent) => {
-            const task_input_element: HTMLInputElement = document.getElementById(this.task_area_selector) as HTMLInputElement
-            const inputed_task:string = task_input_element!.value;
+class Task {
+    readonly id:string
+    title: string 
+    status: TaskStatus
 
-            const to_do_task_element:HTMLElement = document.querySelector('#to_do_task_copy li')!.cloneNode(true) as HTMLElement;
-            to_do_task_element.querySelector('.to_do_task_label')!.innerHTML = inputed_task;
-            
-            document.getElementById('to_do_inner_area')!.appendChild(to_do_task_element);
-        })
+    constructor(title: string) {
+        this.id = uuid()
+        this.title = title
+        this.status = TaskStatus.TODO
     }
 }

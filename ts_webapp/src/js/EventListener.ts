@@ -9,7 +9,7 @@ type Listeners = {
     }
 }  
 
-export class EventLister {
+export class EventListener {
     private readonly linsteners: Listeners = {}
     
     add(listenerId: string, event: string, element: HTMLElement, handler: (e :Event) => void) {

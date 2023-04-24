@@ -1,4 +1,4 @@
-import { Task } from "./Task"
+import { TaskDo } from "./TaskDo"
 
-const task = new Task('add_task_area', 'add_task_button');
+const task = new TaskDo('add_task_area', 'add_task_button');
 task.addTaskTodoEvent();

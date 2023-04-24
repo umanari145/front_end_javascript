@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/umanari145/front_end_javascript#readme",
   "dependencies": {
+    "@types/uuid": "^9.0.1",
     "bootstrap": "^5.2.3",
     "cross-env": "^7.0.3",
     "jquery": "^3.6.4",
