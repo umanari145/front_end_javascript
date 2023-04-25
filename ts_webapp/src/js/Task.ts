@@ -6,7 +6,7 @@ enum TaskStatus {
     DONE = 'DONE'
 }
 
-class Task {
+export class Task {
     readonly id:string
     title: string 
     status: TaskStatus
