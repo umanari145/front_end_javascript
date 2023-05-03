@@ -41,14 +41,6 @@
             </div>
         </div>
     </div>
-    <div class="d-none">
-        <div id="to_do_task_copy">
-            <li> 
-                <span class="to_do_task_label"></span>
-                <button" name="to_do_task" class="delete_task">削除</button>
-            </li>
-        </div>
-    </div>
     <script type="text/javascript" src="./dist/js/index.js?hoge=<?php echo time(); ?>"></script>
 </body>
 </html>
