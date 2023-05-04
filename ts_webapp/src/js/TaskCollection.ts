@@ -19,4 +19,15 @@ export class TaskCollection {
             return task.id !== taskId
         })
     }
+
+    public update = (task:Task) => {
+        this.tasks = this.tasks.map((item:Task) => {
+            if (item.id == task.id) {
+                return task
+            } else {
+                return item 
+            }
+        })
+        console.log(this.tasks)
+    }
 }

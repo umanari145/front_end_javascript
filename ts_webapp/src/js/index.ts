@@ -1,5 +1,5 @@
 import { EventListener } from "./EventListener";
-import { Task } from "./Task";
+import { Task, TaskStatus } from "./Task";
 import { TaskCollection } from "./TaskCollection";
 import { TaskRender } from "./TaskRender"
 
@@ -14,22 +14,20 @@ class Application {
     );
 
     public start = (e:Event):void => {
-        this.addTaskTodoEvent();
+        this.addTaskTodoEvent(e);
         // callback関数のサンプル
         //this.taskRender.subscribeDragAndDrop(this.sampleFunc)
         // 引数はこの段階ではわからないのでいれない(callback内のものをつかので・・・)
         this.taskRender.subscribeDragAndDrop(this.convertStatus)
     }
 
-    public addTaskTodoEvent = ():void => {
+    public addTaskTodoEvent = (e:Event):void => {
         const task_element: HTMLElement = document.getElementById('add_task_button') as HTMLElement
         this.eventListener.add(
             'button_trigger',
             'click',
             task_element,
-            // () => this.copyElementだとうごかないので注意
-            // 補完されている？
-            this.copyElement
+            () => this.copyElement(e)
         );
     }
 
@@ -50,9 +48,17 @@ class Application {
     }
 
     /**
-     * drag時のcallback変数
+     * drag時(todo→doing)のcallback変数
      */
     private convertStatus = (el:Element):void => {
+        const taskId:string = el.id
+        const task = this.taskCollection.find(taskId);
+        task?.update({
+            status:TaskStatus.DOING
+        })
+        if (task) {
+            this.taskCollection.update(task);
+        }
     }
    
 
