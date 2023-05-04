@@ -330,7 +330,13 @@ typescriptでのwebアプリ
 - ts_webapp
   - dist 成果物
   - src 生成元のディレクトリ
-    - js/index.js  生成元js
+    - js
+      - index.ts  生成元ts(Controller的な部分)
+      - EventListener.ts イベントリスナー
+      - Task.ts  タスクモデル
+      - TaskCollection タスクのコレクション
+      - TaskRender HTMLの描画の責務
+    
     - css/app.css  生成css
   - index.php 画面に表示されるhtml
   - webpack.mix.js laravel-mixの設定ファイル(タスクの記述)  

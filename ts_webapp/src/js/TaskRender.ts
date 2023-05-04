@@ -1,7 +1,7 @@
 import { EventListener } from "./EventListener";
 import { Task } from "./Task";
 import { TaskCollection } from "./TaskCollection";
-export class TaskDo {
+export class TaskRender {
     eventListener: EventListener
     public taskCollection = new TaskCollection();
 
@@ -22,7 +22,13 @@ export class TaskDo {
         spanEl.textContent = task.title
         deleteButton.textContent = '削除'
         taskEl.append(spanEl, deleteButton)
+        this.todoList.append(taskEl);
 
         return {taskEl, deleteButton}
+    }
+
+    public remove = (taskId: string) => {
+        const taskEl = document.getElementById(taskId)! as HTMLElement    
+        this.todoList.removeChild(taskEl)
     }
 }

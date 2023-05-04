@@ -1,21 +1,16 @@
 import { EventListener } from "./EventListener";
 import { Task } from "./Task";
 import { TaskCollection } from "./TaskCollection";
-import { TaskDo } from "./TaskDo"
+import { TaskRender } from "./TaskRender"
 
 class Application {
 
     private taskCollection = new TaskCollection()
     private readonly eventListener = new EventListener()
-    private todoList: HTMLElement
 
-    private readonly taskDo: TaskDo = new TaskDo(
+    private readonly taskRender: TaskRender = new TaskRender(
         document.getElementById('to_do_inner_area') as HTMLElement
     );
-
-    constructor() {
-        this.todoList = document.getElementById('to_do_inner_area') as HTMLElement
-    }
 
     public start = (e:Event):void => {
         this.addTaskTodoEvent();
@@ -38,21 +33,15 @@ class Application {
         const task_input_element: HTMLInputElement = document.getElementById('add_task_area') as HTMLInputElement
         const inputed_task:string = task_input_element!.value;
         const task: Task = new Task(inputed_task)
-        const {taskEl, deleteButton }= this.taskDo.render(task);
-        this.todoList.append(taskEl);
+        const {taskEl, deleteButton }= this.taskRender.render(task);
         this.taskCollection.add(task)
 
         this.eventListener.add(
             task.id,
             'click',
             deleteButton,
-            () => this.deleteTask(task.id)
+            () => this.taskRender.remove(task.id)
           )
-    }
-
-    private deleteTask =(taskId:string) => {
-        const taskEl = document.getElementById(taskId)! as HTMLElement    
-        this.todoList.removeChild(taskEl)
     }
 }
 
