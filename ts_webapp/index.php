@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./dist/css/app.css">
+    <link rel="stylesheet" href="./dist/css/app.css?hoge=<?php echo time(); ?>">
 </head>
 <body>
     <h1>看板ボード</h2>
@@ -24,13 +24,12 @@
     <div class="mt-3 d-flex justify-content-between w-75">
         <div class="w-100">
             <div class="text-center">TODO</div>
-            <div id="to_do_inner_area">
-
+            <div id="to_do_inner_area" style="height: 100px;">
             </div>
         </div>
         <div class="w-100">
             <div class="text-center">DOING</div>
-            <div>
+            <div id="doing_inner_area" style="height: 100px;">
                 
             </div>
         </div>

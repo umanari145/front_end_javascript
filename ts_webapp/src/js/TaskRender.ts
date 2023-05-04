@@ -1,13 +1,13 @@
-import { EventListener } from "./EventListener";
+import dragula from "dragula";
 import { Task } from "./Task";
-import { TaskCollection } from "./TaskCollection";
+
 export class TaskRender {
-    eventListener: EventListener
-    public taskCollection = new TaskCollection();
 
     // この表現でプロパティの宣言も同様に行える
-    constructor(private readonly todoList: HTMLElement) {
-        this.eventListener = new EventListener();
+    constructor(
+        private readonly todoList: HTMLElement,
+        private readonly doingList: HTMLElement
+    ) {
     }
 
     // アローでかかないとthisで参照できない
@@ -22,13 +22,25 @@ export class TaskRender {
         spanEl.textContent = task.title
         deleteButton.textContent = '削除'
         taskEl.append(spanEl, deleteButton)
+
         this.todoList.append(taskEl);
 
         return {taskEl, deleteButton}
     }
 
-    public remove = (taskId: string) => {
-        const taskEl = document.getElementById(taskId)! as HTMLElement    
-        this.todoList.removeChild(taskEl)
+    // 関数を引数簡単なサンプル
+    //public subscribeDragAndDrop = (sampleFunc:() => void) => {
+    public subscribeDragAndDrop = (convertStatus:(el:Element) => void) => {
+        dragula([this.todoList, this.doingList]).on('drop', (el, target, source, sibling) => {
+            convertStatus(el)
+        });
+    }
+
+    public remove = (task: Task) => {
+        console.log(task);
+        if (window.confirm(`${task.title}を削除してもよろしいでしょうか？`)) {
+            const taskEl = document.getElementById(task.id)! as HTMLElement    
+            this.todoList.removeChild(taskEl)    
+        }
     }
 }
