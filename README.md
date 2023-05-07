@@ -353,3 +353,16 @@ docker exec js_php npm run ts-watch
 
 dragula<br>
 https://codepen.io/zehad/pen/dyPGqbW
+
+- disguise-dom (仮装DOM)
+参考教材:https://www.techpit.jp/courses/93 <br>
+
+build
+```
+docker exec js_php npm run dis
+```
+
+watch
+```
+docker exec js_php npm run dis-watch
+```
