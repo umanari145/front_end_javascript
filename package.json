@@ -12,7 +12,9 @@
     "ts-mix": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./ts_webapp/webpack.mix.js",
     "ts-watch": "./node_modules/laravel-mix/bin/cli.js  --mix-config=./ts_webapp/webpack.mix.js watch",
     "dis": "npx parcel build ./disguise-dom/src/app.ts -d ./disguise-dom/dist/",
-    "dis-watch": "npx parcel watch ./disguise-dom/src/app.ts -d ./disguise-dom/dist/"
+    "dis-watch": "npx parcel watch ./disguise-dom/src/app.ts -d ./disguise-dom/dist/",
+    "vdom": "npx parcel build ./disguise-dom/src/vdom/src/index.ts -d ./disguise-dom/src/vdom/dist/",
+    "vdom-watch": "npx parcel watch ./disguise-dom/src/vdom/src/index.ts -d ./disguise-dom/src/vdom/dist/"
   },
   "repository": {
     "type": "git",
