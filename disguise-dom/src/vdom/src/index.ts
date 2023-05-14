@@ -2,52 +2,77 @@ import h from "./createElement";
 import { render } from './render'
 
 const INITIAL_STATE = {
-  accounts: [
+  languages: [
     {
       id: 1,
-      name: "リオネル・メッシ",
-      team: "FCバルセロナ",
-      description:
-        "アルゼンチンサンタフェ州ロサリオ出身のイタリア系アルゼンチン人サッカー選手。リーガ・エスパニョーラ・FCバルセロナ所属。アルゼンチン代表。ポジションはフォワード (wikipedia)",
-      isFollow: false,
+      name: "PHP",
+      discription:
+        "PHPはWEB系の言語です。",
     },
     {
       id: 2,
-      name: "クリスティアーノ・ロナウド",
-      team: "Juventus",
-      description:
-        "ポルトガル・フンシャル出身のサッカー選手。セリエA・ユヴェントスFC所属。ポルトガル代表。ポジションはフォワード (wikipedia)",
-      isFollow: true,
+      name: "Python",
+      discription:
+        "Pythonは機械学習でつかわれる言語です。",   
     },
     {
       id: 3,
-      name: "ネイマール",
-      team: "パリサンジェルマン",
-      description:
-        "ブラジル・サンパウロ州モジ・ダス・クルーゼス出身のサッカー選手。ブラジル代表。リーグ・アン・パリ・サンジェルマンFC所属。ポジションはフォワード (wikipedia)",
-      isFollow: false,
+      name: "TypeScript",
+      discription:
+        "TypeScriptは型が存在しています。",
     },
   ],
 };
 
-const convert = () => {
-  
+const convertItem = (props) => {
+  return props.languages.map((e) => {
+    console.log(e.discription)
+    return h("div", {
+      attrs: {
+        class:''
+      },
+      children: [        
+        h("div", {
+          attrs: {
+            class:'language_wrapper'
+          },
+          children:[
+            h("span", {
+              attrs: {
+                class:'name'
+              },
+              children:[e.name]
+            }),
+            h("button", {
+              attrs: {
+                class:'follow-btn'
+              },
+              children:['フォローする']
+            })
+          ]
+        }),
+        h("div", {
+          attrs: {
+            class:'discription'
+          },
+          children:[e.discription]
+        })
+      ],
+    });
+  })
 }
 
 // 関数ではなく変数であることに注意
 const view = (props) => {
-  return h("p", {
+  return h("div", {
     attrs: {},
-    children: ["仮想DOMの学習スタート！"],
+    children: convertItem(INITIAL_STATE)
   });
 }
+
 // オブジェクトの出力
-console.log(view(INITIAL_STATE))
 const $app = render(view(INITIAL_STATE));
 console.log($app)
-// #appはオブジェクトをnodeに履かせている
-/*const $app = render(view)*/
-/*console.log($app)
 
 const el = document.getElementById('app')
-el.appendChild($app)*/
+el.appendChild($app)

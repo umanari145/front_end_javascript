@@ -8,28 +8,28 @@
       <div id="app">
         <div>
           <div class="language_wrapper">
-            <span>PHP</span>
+            <span class="name">PHP</span>
             <button class="follow-btn nofollow">フォローする</button>
           </div>
-          <div>
+          <div class="discription">
             PHPはWEB系の言語です。
           </div>
         </div>
         <div>
           <div class="language_wrapper">
-            <span>Python</span>
+            <span class="name">Python</span>
             <button class="follow-btn nofollow">フォローする</button>
           </div>
-          <div>
+          <div class="discription">
             Pythonは機械学習でつかわれる言語です。
           </div>
         </div>
         <div>
           <div class="language_wrapper">
-            <span>TypeScript</span>
+            <span class="name">TypeScript</span>
             <button class="follow-btn nofollow">フォローする</button>
           </div>
-          <div>
+          <div class="discription">
             TypeScriptは型が存在しています。
           </div>
         </div>
